@@ -42,18 +42,3 @@ puts logo
 end
 
 puts "Sorry! You have run out of guesses"
-
-# is guess correct? if so, display congrats, end game
-# if guess is not correct:
-    # copy guess, copy word
-    # check zip for letters in correct place
-    # apply colours to those letters in display word
-    # remove letters from copy guess and word
-
-
-
-
-
-# compare guess to word, and display correct colours
-# ask for new guess, or congratulate winner
-# repeat x5 (until win condition met, or guesses exhausted)
