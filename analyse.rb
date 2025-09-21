@@ -1,5 +1,3 @@
-Data.define(:)
-
 # pizza
 # alpha
 # NoMatch(a), NoMach(l), Partial(p), NoMatch(h), FullMatch(a)
@@ -9,12 +7,17 @@ def analyse(guess, word)
     word_chars = word.chars
 
     pairs = guess_chars.zip(word_chars)
-    perfect_matches = []
-    pairs.each_with_index do |pair, index|
-        perfect_matches << index if pair.uniq.length == 1
-    end
 
+    pairs.map do |pair|
+        pair.uniq.length == 1
+    end
+    # perfect_matches = []
+    # pairs.each_with_index do |pair, index|
+    #     perfect_matches << index if pair.uniq.length == 1
+    # end
 end
+
+
 
 
 # copy word, copy guess
