@@ -9,6 +9,8 @@ logo = """
 require './analyse'
 require './colourise'
 
+system("clear")
+
 puts logo
 
 puts "Enter your word here."
@@ -27,18 +29,20 @@ puts logo
         puts "Congratulations! You have wordled me."
         exit 0
     else 
-        matches = analyse(guess, word)
-        matches.zip(guess.chars, word.chars).each do |triple|
-            match, guess_char, word_char = triple
-            if match
-                print green(guess_char.to_s) + " "
-            else
-                print guess_char + " "
+        matches = analyse(guess:, word:)
+        matches.each do |match|
+            case match.status
+            when :perfect_match
+                print green(match.guess_char.to_s + " ")
+            when :partial_match
+                print yellow(match.guess_char.to_s + " ")
+            when :no_match
+                print match.guess_char.to_s + " "
             end
         end
         puts
+        puts
     end
-
 end
 
 puts "Sorry! You have run out of guesses"
