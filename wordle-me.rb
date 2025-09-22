@@ -21,10 +21,11 @@ system("clear")
 puts logo
 
 guess_number = 1
+total_guesses = word_length + 1
 
-while guess_number <= 5 do
+while guess_number <= total_guesses do
 
-    puts "Enter guess number #{guess_number}: #{"_ " * word_length}"
+    puts "Enter guess number #{guess_number} out of #{total_guesses}: #{"_ " * word_length}"
     guess = gets.strip
 
     if guess == word
