@@ -13,3 +13,7 @@ end
 def yellow(string)
   colourise(string, 33)
 end
+
+def grey(string)
+  colourise(string, 35)
+end
