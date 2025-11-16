@@ -1,19 +1,13 @@
-def colourise(string, colour_code)
-    "\e[#{colour_code}m#{string}\e[0m"
+require 'rainbow'
+
+def found_in_place(string)
+  Rainbow(string).green
 end
 
-def red(string)
-  colourise(string, 31)
+def found_elsewhere(string)
+  Rainbow(string).yellow
 end
 
-def green(string)
-  colourise(string, 32)
-end
-
-def yellow(string)
-  colourise(string, 33)
-end
-
-def grey(string)
-  colourise(string, 35)
+def not_found(string)
+  Rainbow(string).strike
 end

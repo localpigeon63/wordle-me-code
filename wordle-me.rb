@@ -13,6 +13,10 @@ system("clear")
 
 puts logo
 
+puts found_in_place("Green for go")
+puts found_elsewhere("They call me mellow yellow")
+puts not_found("The silver lining")
+
 puts "Enter your word here. Your word must be between 4 and 6 letters in length."
 
 matches_masterlist = []
@@ -54,9 +58,9 @@ while guess_number <= total_guesses do
         matches.each do |match|
             case match.status
             when :perfect_match
-                print green(match.guess_char.to_s + " ")
+                print found_in_place(match.guess_char.to_s + " ")
             when :partial_match
-                print yellow(match.guess_char.to_s + " ")
+                print found_elsewhere(match.guess_char.to_s + " ")
             when :no_match
                 print match.guess_char.to_s + " "
             end
@@ -71,11 +75,11 @@ while guess_number <= total_guesses do
                         .map {|match| match.guess_char}
         alphabet.each do |letter|
             if full_matches.include?(letter)
-                print green(letter + " ")
+                print found_in_place(letter + " ")
             elsif partial_matches.include?(letter)
-                print yellow(letter + " ")
+                print found_elsewhere(letter + " ")
             elsif no_matches.include?(letter)
-                print grey(letter + " ")
+                print not_found(letter + " ")
             else
                 print letter + " "
             end
