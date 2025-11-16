@@ -9,5 +9,9 @@ def found_elsewhere(string)
 end
 
 def not_found(string)
-  Rainbow(string).strike
+  Rainbow(string).darkslategray
+end
+
+def logo_colour(string)
+  Rainbow(string).mediumaquamarine
 end
